@@ -1,0 +1,23 @@
+*{
+    margin: 100;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cont{
+    justify-content: center;
+    margin: 200px;
+    display: inline;
+    
+    align-items: center;
+    
+}
+button{
+    width: 3rem;
+    height: 1.4rem;
+    background-color: rgb(57, 205, 57);
+   
+    
+}
+input{
+    height: 1.4rem;
+}
