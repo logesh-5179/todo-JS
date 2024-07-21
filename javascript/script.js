@@ -1,19 +1,23 @@
-document.getElementById('Btn').addEventListener('click', addTask);
-function addTask() {
-    const inp = document.getElementById('inp');
-    const taskText = inp.value;
-    if (taskText === '') {
-        alert('Please enter ');
+document.getElementById("todo-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const task=document.getElementById("task-input").value;
+    if(task==""){
+        alert("Please enter a task");
         return false;
     }
-const mylist = document.getElementById('mylist');
-    const li = document.createElement('li');
-    li.innerHTML = `${taskText}<button class="deleteBtn">Delete</button>`;
+    else{
+        const li=document.createElement("li");
+        li.textContent=task
+        const removeButton=document.createElement("button");
+        removeButton.textContent="Remove";
+        removeButton.className="remove";
+        removeButton.onclick = function() {
+            li.remove();
+        };
+        li.appendChild(removeButton)
+        document.getElementById("todo-list").appendChild(li);
+        document.getElementById("task-input").value="";
 
-    mylist.appendChild(li);
-
-    li.querySelector('.deleteBtn').addEventListener('click', function() {
-        li.remove();
-    });
-    inp.value = '';
-}
+    }
+    
+});
